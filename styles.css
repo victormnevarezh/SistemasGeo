@@ -13,14 +13,13 @@ body{
 
 .child {
     margin-top: 3em;
-    width: 50em;
-    height: 50em;
-    display: flex;
+
     align-items: center;
     justify-content: center;
 }
 
 .buttonCenter {
+    margin-top: 1em;
     color: #a9b1b3;
     background-color: #16161e;
     border-color: #a9b1b3;
