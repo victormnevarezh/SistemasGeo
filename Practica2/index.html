@@ -16,8 +16,8 @@
         <div class="row m-5">
             <div class="col-12 text-center">
 
-                <button onclick="getData()" class="btn btn-primary">Obtiene datos del navegador</button>
-                <ul id="browser">
+                <button onclick="getData()" class="text-center btn btn-primary">Obtiene datos del navegador</button>
+                <ul class="m-5" id="browser">
                     <li></li>
                     <li></li>
                     <li></li>
@@ -30,15 +30,17 @@
 
     <script>
 
-        var browser = document.getElementById(browser);
+        var browser = document.getElementById("browser");
 
-        var data = browser.getElementsByTagName("li");
+        var dataBrowser = browser.getElementsByTagName("li");
 
         function getData() {
-            data[0].innerHTML = "Nombre del navegador: " + navigator.appCodeName;
-            data[1].innerHTML = "Versión del navegador: " + navigator.appVersion;
-            data[2].innerHTML = "Estatus de internet: " + navigator.onLine;
-            data[3].innerHTML = "Plataforma: " + navigator.platform;
+
+            dataBrowser[0].innerHTML = "Nombre del navegador: " + navigator.appCodeName;
+            dataBrowser[1].innerHTML = "Versión del navegador: " + navigator.appVersion;
+            dataBrowser[2].innerHTML = "Estatus de internet: " + navigator.onLine;
+            dataBrowser[3].innerHTML = "Plataforma: " + navigator.platform;
+
         }
     </script>
 
