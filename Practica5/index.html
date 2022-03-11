@@ -53,32 +53,30 @@
             position => {
 
               let positionCoords = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          }
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+              }
 
-          let markerProperties = {
-            position: position,
-            maps,
-            title: "Marcador"
-          }
+              let markerProperties = {
+                position: positionCoords,
+                maps,
+                title: "Marcador"
+              }
 
           const marker = new google.maps.Marker(markerProperties)
 
-          map.setCenter(position)
+          map.setCenter(positionCoords)
 
           const infoWindow = new google.maps.InfoWindow({
             content: info
           })
 
           marker.addListener("click", ()=>{
-            infoWindow.open(maps, maker)
+            infoWindow.open(maps, marker)
           })
 
           }
         )
-
-        
       }
     }      
   </script>
