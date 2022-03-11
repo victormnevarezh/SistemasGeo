@@ -31,56 +31,48 @@
   <script>
     var info = "<h1>Universidad DeLaSalle Bajio</h1><br><p><strong>Dirección: Av. Universidad 602, Lomas del Campestre</strong></p><br><p>Teléfono: 477 810 8500</p>"
 
-    function initMap() {
-      var properties = {
-        center: {
-          lat: 21.151606,
-          lng: -101.711394
-        },
-        zoom: 14
-      }
-
-      const map = document.getElementById("map")
-
-      const maps = new google.maps.Map(map, properties)
-
-      if (navigator.geolocation) {
-
-        navigator.geolocation.getCurrentPosition(
-          position => {
-
-            let positionCoords = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
+    function iniciaMapa(){
+            var properties ={
+                center: {
+                    lat: 21.152162,
+                    lng: -101.711022
+                },
+                zoom: 14
             }
+            const mapa= document.getElementById("map");
+            const map= new google.maps.Map(mapa, properties);
+            if(navigator.geolocation){
 
-            let markerProperties = {
-              position: positionCoords,
-              maps,
-              title: "Marcador"
+                navigator.geolocation.getCurrentPosition( position =>{
+
+                    let posicion = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    }
+
+                    let propiedadesMarcador = {
+                        position: posicion,
+                        map,
+                        title: "Marcador"
+                    }
+
+                    const marcador = new google.maps.Marker(propiedadesMarcador);
+                    map.setCenter(posicion);
+                    const infoWindow = new google.maps.InfoWindow({
+                        content: info,
+                    });
+                    marcador.addListener("click",()=>{
+                        infoWindow.open(map,marcador)
+                    });
+                });
             }
-
-            const marker = new google.maps.Marker(markerProperties)
-
-            maps.setCenter(positionCoords)
-
-            const infoWindow = new google.maps.InfoWindow({
-              content: info
-            })
-
-            marker.addListener("click", () => {
-              infoWindow.open(maps,marker)
-            })
-
-          })
-      }
-    }      
+          }     
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU&callback=initMap"
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU&callback=iniciaMapa"
     async defer></script>
 
 </body>
