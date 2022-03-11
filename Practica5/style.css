@@ -1,0 +1,38 @@
+body{
+    background-color: #16161e;
+    align-items: center;
+    height: 100%;
+}
+
+.parent {
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;;
+}
+
+.child {
+    margin-top: 1em;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonCenter {
+    margin-top: 1em;
+    color: #a9b1b3;
+    background-color: #16161e;
+    border-color: #a9b1b3;
+    border-style: groove;
+    font-size: 25px;
+    border-radius: 8px;
+}
+
+img.logo {
+    width:100%;
+    max-width:20em;
+}
+
+.lightGreyGeo{
+    color: #a9b1b3;
+}
