@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Práctica 9</title>
+    <title>Práctica 10 - Watch Position</title>
 
     <link href="./style.css" rel="stylesheet"/>
     <link
@@ -14,20 +14,25 @@
       crossorigin="anonymous"
     />
     <script src="https://kit.fontawesome.com/5bd85f4020.js" crossorigin="anonymous"></script>
-    
-    <style>
-      #map {
-        width: 100%;
-        height: 650px;
-      }
-    </style>
 
   </head>
-  <body style="padding: 0%; margin: 0" class="scroll dark-background">
+  <body style="padding: 0%; margin: 0" class="scroll dark-background text-whity">
 
+    <div class="container text-center small">
+        <div class="row m-2">
+            <div class="col-6">
+                <button class="btn btn-sm btn-primary" id="boton">WatchPosition</button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-sm btn-danger" id="botondetener">Detener watch</button>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-12" id="datos"></div>
+        </div>
+    </div>
 
     <div id="map"></div>
-    
 
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
